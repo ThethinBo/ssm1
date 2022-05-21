@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置别名-->
+    <typeAliases>
+        <package name="com.gzeic.pojo" />
+    </typeAliases>
+    <!--配置数据库连接池-->
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/ssm?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- spring 注解-->
+
+    <!-- 包扫描 -->
+    <mappers>
+        <package name="com.gzeic.dao" />
+    </mappers>
+</configuration>
